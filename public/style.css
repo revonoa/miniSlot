@@ -1,0 +1,231 @@
+:root {
+    --bg: #0f1220;
+    --card: #171a2b;
+    --muted: #9aa3b2;
+    --accent: #66e0a3;
+    --danger: #ff6b6b;
+    --text: #eef2ff;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, apple-system, Segoe UI, Roboto, Pretendard, sans-serif;
+    -webkit-font-smoothing: antialiased
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%
+}
+
+button {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 16px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--card);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #242844
+}
+
+.topbar h1 {
+    font-size: 18px;
+    margin: 0
+}
+
+.coins {
+    font-weight: 700
+}
+
+.mine,
+.slot,
+.history {
+    background: var(--card);
+    border: 1px solid #242844;
+    border-radius: 16px;
+    padding: 16px
+}
+
+.mine-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #222641;
+    border: 1px solid #2c3156;
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform .05s ease
+}
+
+.mine-btn:active {
+    transform: scale(.98)
+}
+
+.box-emoji {
+    font-size: 48px
+}
+
+.box-caption {
+    font-size: 16px
+}
+
+.box-sub {
+    color: var(--muted);
+    font-size: 12px
+}
+
+.slot .reels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 12px
+}
+
+.reel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    background: #222641;
+    border: 1px solid #2c3156;
+    border-radius: 16px;
+    font-size: 48px;
+    user-select: none
+}
+
+.reel.spin {
+    animation: blink .15s linear infinite
+}
+
+@keyframes blink {
+    50% {
+        opacity: .6
+    }
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.cost {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+#bet {
+    background: #222641;
+    color: var(--text);
+    border: 1px solid #2c3156;
+    border-radius: 10px;
+    padding: 8px
+}
+
+.spin-btn {
+    flex: 1;
+    min-width: 140px;
+    background: linear-gradient(180deg, #2ad39b, #22be8d);
+    color: #10342a;
+    border: 0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-weight: 800;
+    font-size: 18px
+}
+
+.payout {
+    min-height: 24px;
+    margin-top: 6px;
+    color: var(--accent);
+    font-weight: 700
+}
+
+.rules {
+    margin-top: 8px;
+    color: var(--muted)
+}
+
+.history h2 {
+    margin: 0 0 8px 0;
+    font-size: 16px
+}
+
+.history-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+    max-height: 240px;
+    overflow: auto
+}
+
+.history-list li {
+    background: #202545;
+    border: 1px solid #2c3156;
+    border-radius: 12px;
+    padding: 8px 10px;
+    font-size: 14px
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    color: var(--muted)
+}
+
+@media (min-width: 880px) {
+    .container {
+        grid-template-columns: 420px 1fr
+    }
+
+    .mine {
+        grid-row: span 1
+    }
+
+    .slot {
+        grid-column: 2
+    }
+
+    .history {
+        grid-column: 2
+    }
+}

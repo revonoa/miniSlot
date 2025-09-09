@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>도박은 패가망신이 맞다</title>
+    <link rel="stylesheet" href="./style.css" />
+
+</head>
+
+<body>
+    <header class="topbar">
+        <h1>슬롯머신 같은것</h1>
+        <div class="coins">
+            <span>코인 : </span><strong id="coinCount">0</strong>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="mine">
+            <button id="mineBtn" class="mine-btn" aria-label="코인 채굴 상자">
+                <div class="box-emoji">■</div>
+                <div class="box-caption">클릭/탭해서 노가다로 코인 얻기</div>
+                <div class="box-sub">(클릭당 +1)</div>
+            </button>
+        </section>
+
+        <section class="slot">
+            <div class="reels" role="group" aria-label="슬롯">
+                <div class="reel" id="reel1">?</div>
+                <div class="reel" id="reel2">?</div>
+                <div class="reel" id="reel3">?</div>
+
+            </div>
+
+            <div class="controls">
+                <div class="cost">
+                    <label for="bet">한판 비용</label>
+                    <select id="bet">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <iption value="25">25</iption>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+                <button id="spinBtn" class="spin-btn" disabled>돌려!</button>
+            </div>
+
+            <div class="payout" id="payoutMsg" aria-live="polite"></div>
+            <details class="rules">
+                <summary>규칙?</summary>
+                <ul>
+                    <li>코인 상자를 눌러 노가다를 해서 코인을 얻는다.</li>
+                    <li>돌리는 비용은 차감되고, 3개가 모두 같은 모양이면 님은 잭팟!</li>
+                    <li>2개 일치면 그냥 당첨.</li>
+                </ul>
+            </details>
+        </section>
+
+        <section class="history">
+            <h2>과거내역</h2>
+            <ul id="historyList" class="history-list"></ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <small>만든인간 : rnnh(insane_cat)</small>
+    </footer>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
