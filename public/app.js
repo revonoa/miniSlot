@@ -4,7 +4,7 @@
         { icon: '🍋', weight: 35, payout3: 40, payout2: 6 },
         { icon: '🔔', weight: 18, payout3: 120, payout2: 15 },
         { icon: '⭐', weight: 6, payout3: 300, payout2: 40 },
-        { icon: '💎', weight: 1, payout3: 1500, payout2: 120 },
+        { icon: '💎', weight: 3, payout3: 1500, payout2: 120 },
     ];
 
     let coins = 0;
